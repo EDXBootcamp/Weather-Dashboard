@@ -1,7 +1,7 @@
 // Ensure the DOM is ready before executing the code
 $(document).ready(function () {
     // Your OpenWeatherMap API key
-    const apiKey = 'e01aa14de34f2e6a0427a34f558e6195';
+    const apiKey = 'stop';
   
     // Event listener for the form submission
     $('#search-form').submit(function (event) {
