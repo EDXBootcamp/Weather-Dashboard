@@ -23,30 +23,19 @@ body {
   color: #fff;
 }
 
-/* .weather-search {
-  width: 70%;
+.forecast-5 {
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(9, 38, 121, 1) 35%,
+    rgba(0, 212, 255, 1) 100%
+  );
+  color: white;
 }
-
-.search-button {
-  background-color: #007bff;
-  color: #fff;
-  cursor: pointer;
-} */
 
 .hr.weather-hr {
   border-top: 1px solid #007bff;
-}
-
-.list-group {
-  margin-top: 15px;
-}
-
-.list-group-item {
-  cursor: pointer;
-}
-
-.list-group-item:hover {
-  background-color: #e9ecef;
 }
 
 #today,
