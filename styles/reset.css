@@ -1,0 +1,85 @@
+/* Reset.css */
+
+/* Box-sizing border-box reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin and padding */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+margin,
+figure,
+ul,
+ol,
+dl,
+menu,
+blockquote,
+fieldset,
+form,
+pre,
+a,
+img,
+button {
+  margin: 0;
+  padding: 0;
+}
+
+/* Remove list styles (bullet points) */
+ul,
+ol {
+  list-style: none;
+}
+
+/* Remove default styles for anchor links */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Remove the default border and padding on buttons */
+button {
+  border: none;
+  padding: 0;
+}
+
+/* Standardize fonts and line heights */
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.5;
+}
+
+/* Set the base font size to 16 pixels */
+html {
+  font-size: 16px;
+}
+
+/* Remove default button styles */
+button,
+input,
+select {
+  margin: 0;
+}
+
+/* Ensure vertical alignment and spacing for inline and inline-block elements */
+img,
+svg,
+textarea,
+input,
+select,
+button {
+  vertical-align: middle;
+}
+
+/* Remove outline on focused elements (commonly an issue in Firefox) */
+:focus {
+  outline: 0;
+}
