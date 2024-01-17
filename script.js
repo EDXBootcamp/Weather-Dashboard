@@ -1,7 +1,7 @@
-// Ensure the DOM is ready before executing the code
+
 $(document).ready(function () {
     // Your OpenWeatherMap API key
-    const apiKey = 'tes';
+    const apiKey = 'e01aa14de34f2e6a0427a34f558e6195';
   
     // Event listener for the form submission
     $('#search-form').submit(function (event) {
@@ -97,33 +97,49 @@ $(document).ready(function () {
         }
     }
 
+
     // Function to add the searched city to the search history and localStorage
     function addToSearchHistory(cityName) {
-        const historyItem = `<a href="#" class="list-group-item">${cityName}</a>`;
-        $('#history').prepend(historyItem);
-
         // Get the existing search history from localStorage
         const existingHistory = JSON.parse(localStorage.getItem('searchHistory')) || [];
+
+        // Remove the city if already exists in history
+        const index = existingHistory.indexOf(cityName);
+        if (index !== -1) {
+            existingHistory.splice(index, 1);
+        }
 
         // Add the new city to the history
         existingHistory.unshift(cityName);
 
         // Save the updated history back to localStorage
         localStorage.setItem('searchHistory', JSON.stringify(existingHistory));
+
+        // Update the displayed search history
+        displaySearchHistory();
     }
 
     // Function to display the search history from localStorage
     function displaySearchHistory() {
         const existingHistory = JSON.parse(localStorage.getItem('searchHistory')) || [];
+        $('#history').html('');
 
         existingHistory.forEach(function (cityName) {
             const historyItem = `<a href="#" class="list-group-item">${cityName}</a>`;
             $('#history').append(historyItem);
         });
+
+        // Add click event to history items for one-click search
+        $('.list-group-item').click(function () {
+            const cityName = $(this).text();
+            $('#search-input').val(cityName);
+            getWeatherData(cityName);
+        });
     }
 
     // Display the search history on page load
     displaySearchHistory();
+
   });
 
 
